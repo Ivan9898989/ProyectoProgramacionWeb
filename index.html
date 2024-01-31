@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        .color-container{
+            background-color: #148a37;
+            height: 100px;
+        }
+
+        #navNaranja{
+            background-color: #ff8c00;
+            height: 35px;
+        }
+
+        #nombreCafeteria{
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: left;
+            padding-top: 15px;
+            padding-left: 15px;
+        }
+
+        #datosimpar{
+            background-color: #6debff;
+            height: 250px;
+            width:  2080px;
+       
+        }
+
+        h1{
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(255, 0, 17);
+        }
+
+        h2{
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(34, 16, 97);
+        }
+
+        #datospar{
+            background-color: white;
+            height: 250px;
+            
+        }
+        
+ 
+    </style>
+
+</head>
+<body>
+
+    <div id="navNaranja">
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" style="color: black;" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: black;" href="#">Contáctos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: black;"  href="#">Nutricional </a>
+            </li>
+          </ul>
+    </div>
+   
+    <div class="color-container">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+            <a class="navbar-brand" id="nombreCafeteria">Donosouio</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+            </div>
+        </nav>
+    </div>
+    
+
+    </br>
+
+    <div class="container">
+         <div class="row">
+             <div class="col-md-12">
+                <div id="imagen-transition">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img id="imagenCambiante" src="assets\postres.jpg" alt="" width="1300px">
+                    </div>
+                   </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+    <div id="datosimpar" class="container">
+        <div class="row">
+            <div class="col-md-6">
+            </br>
+                <div class="d-flex align-items-center justify-content-center">
+                    <h1>Dulces </h1>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <button class="btn btn-success" onclick="window.location.href='productoDulce.html'" type="submit" >Información</button>
+                </div>       
+            </div>
+            <div class="col-md-2">
+                <img src="assets\primeraImagen.png"  width="300px">
+            </div>
+          </div>
+    </div>
+
+    <div id="datospar" class="container">
+        <div class="row">
+            <div class="col-md-6">
+            </br>
+                <div class="d-flex align-items-center justify-content-center">
+                    <h1>Bebidas </h1>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <button class="btn btn-success" type="submit">Información</button>
+                </div>       
+            </div>
+            <div class="col-md-2">
+                <img src="assets\bebidas.jpg"  width="300px" >
+            </div>
+          </div>
+    </div>
+
+    <div id="datosimpar" class="container">
+        <div class="row">
+            <div class="col-md-6">
+            </br>
+                <div class="d-flex align-items-center justify-content-center">
+                    <h1>Desayunos </h1>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <button class="btn btn-success" type="submit">Información</button>
+                </div>       
+            </div>
+            <div class="col-md-2">
+                <img src="assets\desayunos.jpg" width="300px">
+          </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var imagenes = [
+            "assets/postres.jpg",
+            "assets/bebidas.jpg",
+            "assets/desayunos.jpg"
+        ];
+
+
+        var indiceImagen = 0;
+
+        function cambiarImagen() {
+            document.getElementById("imagenCambiante").src = imagenes[indiceImagen];
+            indiceImagen = (indiceImagen + 1) % imagenes.length;
+        }
+        cambiarImagen();
+        setInterval(cambiarImagen, 5000);
+    </script>
+</body>
+</html>
